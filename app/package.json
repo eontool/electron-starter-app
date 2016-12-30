@@ -1,0 +1,7 @@
+{
+    "name": "my-application",
+    "description": "Demo Application",
+    "version": "0.1.0",
+    "author": "Daniel Dominguez",
+    "main": "main.js"
+}

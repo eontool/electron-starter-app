@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.overlay{
+        background-color:#000;
+        background-image: url('../img/spinner.svg');
+        background-repeat:no-repeat;
+        background-position: center center;
+        position: fixed;
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        opacity: 0.25;
+        z-index:10000;
+}

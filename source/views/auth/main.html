@@ -1,0 +1,81 @@
+<div class="container">
+
+    <div class="row mt-3" ng-controller="AuthCtrl as authctrl">
+
+        <div class="col-lg-6 offset-lg-3 text-xs-center">
+
+            <h1>Application</h1>
+
+            <h6>Welcome</h6>
+
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="mt-3">
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne" data-toggle="collapse" data-target="#collapseOne">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Sign In</a>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block">
+                            <form name="signinForm" class="signinForm text-xs-center" ng-submit="authctrl.signinFn()" novalidate>
+                                <label></label>
+                                <input type="email" class="form-control" placeholder="Email" name="email" ng-model="authctrl.signin.email" required>
+                                <label></label>
+                                <input type="password" class="form-control" placeholder="Password" name="password" ng-model="authctrl.signin.password" required>
+                                <label></label>
+                                <button type="submit" class="btn btn-success btn-block" ng-disabled="signinForm.email.$error.required || signinForm.email.$error.email || signinForm.password.$error.required || authctrl.disableButtons">Sign In</button>
+                                <label for=""></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Register</a>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="card-block">
+                            <form name="registerForm" class="registerForm text-xs-center" ng-submit="authctrl.registerFn()">
+                                <label for=""></label>
+                                <input type="email" class="form-control" placeholder="Email address" name="email" ng-model="authctrl.register.email" required>
+                                <label for=""></label>
+                                <input type="password" class="form-control" placeholder="Password" name="password" ng-model="authctrl.register.password" required>
+                                <label for=""></label>
+                                <input type="password" class="form-control" placeholder="Retype password" name="passwordRetype" ng-model="authctrl.register.passwordRetype" ng-pattern="authctrl.register.password" required>
+                                <label for=""></label>
+                                <button type="submit" class="btn btn-success btn-block" ng-disabled="registerForm.email.$error.required || registerForm.email.$error.email || registerForm.password.$error.required || registerForm.passwordRetype.$error.required || registerForm.$error.pattern">Register</button>
+                                <label for=""></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingThree">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Recover</a>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="card-block">
+                            <form name="recoverForm" class="recoverForm text-xs-center" ng-submit="authctrl.recoverFn()" novalidate>
+                                <label></label>
+                                <input type="email" class="form-control" placeholder="Email" name="email" ng-model="authctrl.recover.email" required>
+                                <label></label>
+                                <button type="submit" class="btn btn-success btn-block" ng-disabled="recoverForm.email.$error.required">Request</button>
+                                <label for=""></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../">Return</a>
+
+        </div>
+    </div>
+
+</div>
